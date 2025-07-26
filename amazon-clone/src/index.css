@@ -11,3 +11,7 @@
 *::after {
   box-sizing: border-box;
 }
+
+:root{
+  --amazon-color: #f3a847;
+}

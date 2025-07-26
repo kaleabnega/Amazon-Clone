@@ -2,6 +2,7 @@ import React from "react";
 import style from "./css/header.module.css";
 import us_flag from "../../assets/images/united-states-of-america-flag-png-large.png";
 import amazon_logo from "../../assets/images/pngimg.com - amazon_PNG11.png";
+import LowerHeader from "../LowerHeader/LowerHeader";
 
 function Header() {
   return (
@@ -38,12 +39,10 @@ function Header() {
           </div>
         </div>
 
-        <span className={style.search_bar_container}>
+        <div className={style.search_bar_container}>
           <div>
-            <select name="" id="">
-              <option value="" selected>
-                All
-              </option>
+            <select name="" id="" defaultValue="all">
+              <option value="all">All</option>
             </select>
             <input type="text" placeholder="Search Product" />
           </div>
@@ -61,7 +60,7 @@ function Header() {
               </svg>
             </button>
           </div>
-        </span>
+        </div>
 
         <div className={style.language_switch_container}>
           <div className={style.usa_flag_container}>
@@ -77,10 +76,9 @@ function Header() {
               }}
               name=""
               id=""
+              defaultValue="en"
             >
-              <option value="" selected>
-                EN
-              </option>
+              <option value="en">EN</option>
             </select>
           </div>
         </div>
@@ -111,7 +109,7 @@ function Header() {
             <svg
               style={{
                 width: "30px",
-                paddingTop: "10px"
+                paddingTop: "10px",
               }}
               fill="white"
               xmlns="http://www.w3.org/2000/svg"
@@ -124,6 +122,7 @@ function Header() {
           </a>
         </div>
       </section>
+      <LowerHeader />
     </>
   );
 }
