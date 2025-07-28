@@ -1,7 +1,7 @@
 .categories_container {
   display: flex;
   justify-content: center;
-  gap: 120px;
+  gap: 70px;
   margin-bottom: 100px;
   padding-top: 15px;
   margin-top: -10%;
@@ -10,7 +10,7 @@
 }
 
 .categories_container img {
-  height: 250px;
+  height: 300px;
   margin-bottom: 5px;
 }
 

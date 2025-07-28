@@ -3,6 +3,7 @@ import style from "./css/header.module.css";
 import us_flag from "../../assets/images/united-states-of-america-flag-png-large.png";
 import amazon_logo from "../../assets/images/pngimg.com - amazon_PNG11.png";
 import LowerHeader from "../LowerHeader/LowerHeader";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -10,7 +11,9 @@ function Header() {
       <section className={style.header_container}>
         <div className={style.left_side_logo}>
           <div className={style.amazon_logo}>
-            <img src={amazon_logo} alt="amazon logo" />
+            <Link to="/">
+              <img src={amazon_logo} alt="amazon logo" />
+            </Link>
           </div>
           <div
             style={{
@@ -91,21 +94,21 @@ function Header() {
           }}
         >
           <div className={style.sign_in_container}>
-            <a href="#">
+            <Link to="/auth">
               <div className={style.sign_in_label}>Sign In</div>
               <div>Account & Lists</div>
-            </a>
+            </Link>
           </div>
           <div>
-            <a href="#">
+            <Link to="/orders">
               <div className={style.returns_label}>Returns</div>
               <div>& Orders</div>
-            </a>
+            </Link>
           </div>
         </div>
 
         <div className={style.cart_container}>
-          <a href="">
+          <Link to="/cart">
             <svg
               style={{
                 width: "30px",
@@ -119,7 +122,7 @@ function Header() {
               <path d="M17,18A2,2 0 0,1 19,20A2,2 0 0,1 17,22C15.89,22 15,21.1 15,20C15,18.89 15.89,18 17,18M1,2H4.27L5.21,4H20A1,1 0 0,1 21,5C21,5.17 20.95,5.34 20.88,5.5L17.3,11.97C16.96,12.58 16.3,13 15.55,13H8.1L7.2,14.63L7.17,14.75A0.25,0.25 0 0,0 7.42,15H19V17H7C5.89,17 5,16.1 5,15C5,14.65 5.09,14.32 5.24,14.04L6.6,11.59L3,4H1V2M7,18A2,2 0 0,1 9,20A2,2 0 0,1 7,22C5.89,22 5,21.1 5,20C5,18.89 5.89,18 7,18M16,11L18.78,6H6.14L8.5,11H16Z" />
             </svg>
             <span>0</span>
-          </a>
+          </Link>
         </div>
       </section>
       <LowerHeader />

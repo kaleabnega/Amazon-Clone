@@ -12,6 +12,7 @@ function Category() {
             <CategoryCard
               key={index}
               title={category.title}
+              name={category.name}
               imgLink={category.imgLink}
             />
           );

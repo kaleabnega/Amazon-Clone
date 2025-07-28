@@ -1,12 +1,14 @@
 import React from "react";
 import styles from "./css/category.module.css"
+import { Link } from "react-router-dom";
+
 
 function CategoryCard(props) {
-  const { title, imgLink } = props;
+  const { title, name, imgLink } = props;
   return (
     <>
       <div className={styles.category_container}>
-        <a href="">
+        <Link to={`/category/${name}`}>
           <div>
             <h2>{title}</h2>
           </div>
@@ -14,7 +16,7 @@ function CategoryCard(props) {
             <img className={styles.category_img} src={imgLink} alt="" />
           </span>
           <p>Shop now</p>
-        </a>
+        </Link>
       </div>
     </>
   );

@@ -1,3 +1,4 @@
+import ComponentRoutes from "../ComponentRoutes";
 import "./App.css";
 import CarouselDisplay from "./Components/CarouselDisplay/CarouselDisplay";
 import Category from "./Components/Category/Category";
@@ -7,10 +8,12 @@ import Products from "./Components/Products/Products";
 function App() {
   return (
     <>
-      <Header />
+      {/* <Header />
       <CarouselDisplay />
       <Category />
-      <Products/>
+      <Products/> */}
+
+      <ComponentRoutes />
     </>
   );
 }

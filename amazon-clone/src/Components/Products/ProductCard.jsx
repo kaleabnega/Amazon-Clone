@@ -2,9 +2,11 @@ import React from "react";
 import styles from "./css/products.module.css";
 import Rating from "@mui/material/Rating";
 import ProductPriceFormat from "./ProductPriceFormat";
+import { Link } from "react-router-dom";
 
 function ProductCard(props) {
   const {
+    productID,
     productImage,
     productTitle,
     productPrice,
@@ -14,11 +16,11 @@ function ProductCard(props) {
   return (
     <section>
       <div>
-        <a href="">
+        <Link to={`/products/${productID}`}>
           <div className={styles.product_image_container}>
             <img className={styles.product_image} src={productImage} alt="" />
           </div>
-        </a>
+        </Link>
 
         <div className={styles.product_details_container}>
           <div className={styles.product_title_container}>{productTitle}</div>
