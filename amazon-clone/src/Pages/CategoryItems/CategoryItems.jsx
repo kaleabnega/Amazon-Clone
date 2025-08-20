@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { baseURL } from "../../API/baseURL";
 import ProductCard from "../../Components/Products/ProductCard";
-import styles from "./css/categoryitems.module.css";
+import style from "./css/categoryitems.module.css";
 import Loader from "../../Components/Loader/Loader";
 
 function CategoryItems() {
@@ -18,15 +18,22 @@ function CategoryItems() {
       .get(`${baseURL}/products/category/${categoryType}`)
       .then((res) => {
         console.log(res);
+        let modifiedItems = res.data.map((item) => {
+          let modifiedItem = { ...item };
+          modifiedItem.image =
+            modifiedItem.image.slice(0, modifiedItem.image.length - 4) +
+            "t.png";
+          return modifiedItem;
+        });
         setItems(() => {
-          return res.data;
+          return modifiedItems;
         });
         setIsLoading(false);
       })
       .catch((err) => {
         console.error("Error occurred: " + err);
       });
-  }, []);
+  }, [categoryType]);
   return (
     <Layout>
       <div
@@ -44,18 +51,23 @@ function CategoryItems() {
       {isLoading ? (
         <Loader />
       ) : (
-        <div className={styles.products_container}>
+        <div className={style.products_container}>
           {items.map((item) => {
             return (
-              <ProductCard
-                key={item.id}
-                productID={item.id}
-                productTitle={item.title}
-                productImage={item.image}
-                productPrice={item.price}
-                productRating={item.rating.rate}
-                productRatingCount={item.rating.count}
-              />
+              <div>
+                <ProductCard
+                  key={item.id}
+                  productID={item.id}
+                  productTitle={item.title}
+                  productImage={item.image}
+                  productDescription={item.description}
+                  productPrice={item.price}
+                  productRating={item.rating.rate}
+                  productRatingCount={item.rating.count}
+                  // renderDescription={true}
+                  renderAddToCartButton={true}
+                />
+              </div>
             );
           })}
         </div>

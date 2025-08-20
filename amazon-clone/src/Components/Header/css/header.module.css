@@ -1,3 +1,9 @@
+.sticky_header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
 .usa_flag_container img {
   width: 25px;
 }
@@ -75,8 +81,6 @@
   cursor: pointer;
   background-color: #d49644;
 }
-
-
 
 .language_switch_container {
   padding-top: 10px;

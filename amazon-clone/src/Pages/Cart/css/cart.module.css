@@ -1,0 +1,88 @@
+.cart_page_container {
+  padding-left: 20px;
+  display: flex;
+}
+
+.cart_page_container h1 {
+  padding-top: 50px;
+  margin-bottom: 15px;
+}
+
+.cart_page_container h2 {
+  margin-bottom: 20px;
+}
+
+.cart_page_container hr {
+  margin-bottom: 20px;
+}
+
+.cart_items_info {
+  width: 70%;
+}
+
+.checkout_container {
+  border-radius: 5px;
+  border: 1px solid grey;
+  background-color: rgb(243, 243, 243);
+  padding: 27px;
+  text-align: center;
+}
+
+.cart_page_container > div:nth-child(2) {
+  padding-left: 50px;
+  padding-top: 25px;
+}
+
+.subtotal_container,
+.gift_checkbox_container {
+  margin-bottom: 27px;
+}
+
+.checkout_link {
+  text-decoration: none;
+  color: black;
+}
+
+.checkout_link_container {
+  padding: 8px 40px;
+  background-color: var(--amazon-color);
+  border-radius: 5px;
+}
+
+.checkout_link_container:hover {
+  cursor: pointer;
+}
+
+.cart_items img {
+  width: 150px;
+  height: 150px;
+}
+
+.cart_items section nav > div:nth-child(1) {
+  margin-bottom: 0px;
+}
+
+.cart_item {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+}
+
+.num_of_item_controller{
+  padding-top: 15px;
+}
+
+.num_of_item_controller button:nth-child(1) {
+  padding: 5px 10px;
+  font-size: 15px;
+}
+
+.num_of_item_controller button:nth-child(3) {
+  font-size: 15px;
+  padding: 5px 12px;
+}
+
+.num_of_item_controller div {
+  text-align: center;
+  padding: 5px 0px;
+}

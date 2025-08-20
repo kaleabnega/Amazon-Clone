@@ -36,10 +36,12 @@ function Products() {
                 key={product.id}
                 productID={product.id}
                 productTitle={product.title}
+                productDescription={product.description}
                 productImage={product.image}
                 productPrice={product.price}
                 productRating={product.rating.rate}
                 productRatingCount={product.rating.count}
+                renderAddToCartButton={true}
               />
             );
           })}

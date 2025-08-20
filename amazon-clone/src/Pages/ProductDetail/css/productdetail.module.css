@@ -15,8 +15,8 @@
    */
 .products_container section {
   box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.2);
+  display: inline-block;
   position: relative;
-  width: 200px;
 }
 
 .product_details_container {
@@ -34,6 +34,7 @@
   font-size: 18px;
   margin-bottom: 8px;
 }
+
 
 .price_container {
   padding-top: 8px;
@@ -55,3 +56,5 @@
 .products_container section:hover .add_to_cart_button {
   display: block;
 }
+
+
