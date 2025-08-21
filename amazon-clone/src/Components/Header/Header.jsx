@@ -5,9 +5,11 @@ import amazon_logo from "../../assets/images/pngimg.com - amazon_PNG11.png";
 import LowerHeader from "../LowerHeader/LowerHeader";
 import { Link } from "react-router-dom";
 import { DataContext } from "../DataProvider/DataProvider";
+import { Type } from "../../Utility/action.type";
+import { auth } from "../../Utility/firebase";
 
 function Header() {
-  const [{ basket }, dispatch] = useContext(DataContext);
+  const [{ basket, user }, dispatch] = useContext(DataContext);
 
   const numOfBasketItems = basket.reduce((acc, curr) => {
     return acc + curr.quantity;
@@ -101,9 +103,31 @@ function Header() {
           }}
         >
           <div className={style.sign_in_container}>
-            <Link to="/auth">
-              <div className={style.sign_in_label}>Sign In</div>
-              <div>Account & Lists</div>
+            <Link to={!user && "/auth"}>
+              {user ? (
+                <>
+                  <div className={style.sign_in_label}>
+                    Hello, {user.email.split("@")[0]}
+                  </div>
+                  <div
+                    onClick={() => {
+                      // dispatch({
+                      //   type: Type.SET_USER,
+                      //   user: null,
+                      // });
+
+                      auth.signOut();
+                    }}
+                  >
+                    Sign out
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className={style.sign_in_label}>Hello, sign in</div>
+                  <div>Account & Lists</div>
+                </>
+              )}
             </Link>
           </div>
           <div>

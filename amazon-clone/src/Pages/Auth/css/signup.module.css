@@ -1,0 +1,56 @@
+.auth_section {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.conditions_of_use_container {
+  width: 330px;
+  margin-bottom: 10px;
+}
+
+.auth_details_container {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.amazon_logo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sign_in_heading {
+  font-size: 35px;
+  margin-bottom: 15px;
+}
+
+.auth_details_container input {
+  width: 100%;
+}
+
+.email_label_container,
+.password_label_container {
+  font-weight: bolder;
+}
+
+.sign_in_button_container {
+  text-align: center;
+  padding: 20px 0px;
+}
+
+.sign_in_button_container button {
+  width: 100%;
+  padding: 10px 0px;
+  background-color: var(--amazon-color);
+  border-radius: 5px;
+}
+
+.sign_in_button_container button:hover{
+    background-color: var(--amazon-color-hover);
+}
+
+.create_account_button_container button {
+  width: 100%;
+  padding: 10px 0px;
+}
