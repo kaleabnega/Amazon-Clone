@@ -65,10 +65,10 @@
 .cart_item {
   display: flex;
   gap: 50px;
-  justify-content: center;
+  /* justify-content: center; */
 }
 
-.num_of_item_controller{
+.num_of_item_controller {
   padding-top: 15px;
 }
 
@@ -85,4 +85,9 @@
 .num_of_item_controller div {
   text-align: center;
   padding: 5px 0px;
+}
+
+.cart_items {
+  display: flex;
+  justify-content: center;
 }

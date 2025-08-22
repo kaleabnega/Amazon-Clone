@@ -38,38 +38,40 @@ function Cart() {
           </div>
           <hr />
           <div className={styles.cart_items}>
-            {basket?.length == 0 ? (
-              <p>No items in your cart.</p>
-            ) : (
-              basket?.map((item) => {
-                return (
-                  <div key={item?.productID} className={styles.cart_item}>
-                    <ProductCard
-                      productID={item?.productID}
-                      productTitle={item.productTitle}
-                      productDescription={item.productDescription}
-                      productImage={item.productImage}
-                      productPrice={item.productPrice}
-                      productRating={item?.productRating}
-                      productRatingCount={item?.productRatingCount}
-                      isFlex={true}
-                      renderDescription={true}
-                      renderAddToCartButton={false}
-                    />
+            <div>
+              {basket?.length == 0 ? (
+                <p>No items in your cart.</p>
+              ) : (
+                basket?.map((item) => {
+                  return (
+                    <div key={item?.productID} className={styles.cart_item}>
+                      <ProductCard
+                        productID={item?.productID}
+                        productTitle={item.productTitle}
+                        productDescription={item.productDescription}
+                        productImage={item.productImage}
+                        productPrice={item.productPrice}
+                        productRating={item?.productRating}
+                        productRatingCount={item?.productRatingCount}
+                        isFlex={true}
+                        renderDescription={true}
+                        renderAddToCartButton={false}
+                      />
 
-                    <div className={styles.num_of_item_controller_container}>
-                      <div className={styles.num_of_item_controller}>
-                        <button onClick={() => increment(item)}>+</button>
-                        <div>{item.quantity}</div>
-                        <button onClick={() => decrement(item.productID)}>
-                          -
-                        </button>
+                      <div className={styles.num_of_item_controller_container}>
+                        <div className={styles.num_of_item_controller}>
+                          <button onClick={() => increment(item)}>+</button>
+                          <div>{item.quantity}</div>
+                          <button onClick={() => decrement(item.productID)}>
+                            -
+                          </button>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                );
-              })
-            )}
+                  );
+                })
+              )}
+            </div>
           </div>
         </div>
 
