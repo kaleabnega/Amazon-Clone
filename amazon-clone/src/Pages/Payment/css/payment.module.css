@@ -1,0 +1,79 @@
+.checkout_header div {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bolder;
+  padding: 15px 0px;
+  background-color: #efefef;
+}
+
+.checkout_header {
+  margin-bottom: 75px;
+}
+
+.payment_section hr {
+  color: grey;
+  margin-bottom: 30px;
+}
+
+.delivery_address_label {
+  font-weight: bolder;
+}
+
+.delivery_address_container {
+  display: flex;
+  gap: 180px;
+  margin-bottom: 30px;
+}
+
+.review_items_container > div:first-child {
+  font-weight: bolder;
+}
+
+.review_items_container {
+  display: flex;
+  gap: 150px;
+  margin-bottom: 30px;
+}
+
+.items_to_be_purchased img {
+  width: 100px;
+  height: 100px;
+}
+
+.payment_section section nav > div:nth-child(1) {
+  margin-bottom: 20px;
+}
+
+.payment_method_label {
+  font-weight: bolder;
+}
+
+.card_info_container {
+  max-width: 350px;
+  width: 100%;
+}
+
+.payment_method_container{
+    display: flex;
+    gap: 200px;
+}
+
+.total_order_info_container{
+  padding-top: 25px;
+}
+
+.payment_button button{
+  padding: 8px 80px;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--amazon-color);
+  cursor: pointer;
+}
+
+.payment_button button:hover{
+background-color: var(--amazon-color-hover);
+}
+
+.payment_button{
+  padding-top: 20px;
+}
