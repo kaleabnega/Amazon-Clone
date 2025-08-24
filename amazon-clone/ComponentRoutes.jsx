@@ -7,8 +7,9 @@ import Orders from "./src/Pages/Orders/Orders";
 import Cart from "./src/Pages/Cart/Cart";
 import CategoryItems from "./src/Pages/CategoryItems/CategoryItems";
 import ProductDetail from "./src/Pages/ProductDetail/ProductDetail";
-import {CheckoutProvider, Elements } from "@stripe/react-stripe-js";
+import { CheckoutProvider, Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
+import ProtectedRoutes from "./src/Components/ProtectedRoutes/ProtectedRoutes";
 
 const stripePromise = loadStripe(
   "pk_test_51RyY6TIqXq7PsHFAgfiB1ps3LXWtZ4A3rfHlkbsnyvvXxbyUPBa7gdSDuJuoInjgOkauLHKncLgmh4As36O7EpOY00JnWc25pL"
@@ -23,12 +24,27 @@ function ComponentRoutes() {
         <Route
           path="/payment"
           element={
-            <Elements stripe={stripePromise}>
-              <Payment />
-            </Elements>
+            <ProtectedRoutes
+              msg={"You must be a user to make a payment"}
+              redirect={"/payment"}
+            >
+              <Elements stripe={stripePromise}>
+                <Payment />
+              </Elements>
+            </ProtectedRoutes>
           }
         ></Route>
-        <Route path="/orders" element={<Orders />}></Route>
+        <Route
+          path="/orders"
+          element={
+            <ProtectedRoutes
+              msg={"You must be a user to view orders"}
+              redirect={"/orders"}
+            >
+              <Orders />
+            </ProtectedRoutes>
+          }
+        ></Route>
         <Route path="/cart" element={<Cart />}></Route>
         <Route path="/products/:productID" element={<ProductDetail />}></Route>
         <Route

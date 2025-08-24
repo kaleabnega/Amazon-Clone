@@ -10,7 +10,7 @@ import {
 import { DataContext } from "../../Components/DataProvider/DataProvider";
 import { Type } from "../../Utility/action.type";
 import { ClipLoader } from "react-spinners";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 function SignUp() {
   const [email, setEmail] = useState("");
@@ -23,6 +23,8 @@ function SignUp() {
   // console.log(user);
 
   const navigate = useNavigate();
+  const navStateData = useLocation();
+  console.log(navStateData);
 
   const authHandler = async (e) => {
     e.preventDefault();
@@ -33,7 +35,7 @@ function SignUp() {
         .then((userInfo) => {
           dispatch({ type: Type.SET_USER, user: userInfo.user });
           setIsLoading({ ...IsLoading, signin: false });
-          navigate("/")
+          navigate(navStateData?.state?.redirect || "/");
         })
         .catch((err) => {
           // console.error("Error occurred: " + err);
@@ -46,7 +48,7 @@ function SignUp() {
         .then((userInfo) => {
           dispatch({ type: Type.SET_USER, user: userInfo.user });
           setIsLoading({ ...IsLoading, signup: false });
-          navigate("/");
+          navigate(navStateData?.state?.redirect || "/");
         })
         .catch((err) => {
           // console.error("Error occurred: " + err);
@@ -72,6 +74,17 @@ function SignUp() {
         </Link>
 
         <div className={styles.auth_details_container}>
+          {navStateData?.state?.msg && (
+            <small
+              style={{
+                color: "red",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              {navStateData?.state?.msg}
+            </small>
+          )}
           <div className={styles.sign_in_heading}>Sign-in</div>
 
           <div
