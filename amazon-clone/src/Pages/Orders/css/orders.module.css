@@ -1,0 +1,26 @@
+.orders_container{
+    background-color: rgb(182, 181, 181);
+    padding: 70px;
+}
+
+.orders_container > div{
+    background-color: white;
+}
+
+.orders_container img{
+    width: 150px;
+    height: auto;
+}
+
+.orders_container section nav > div:nth-child(1){
+    margin-bottom: 10px;
+}
+
+.orders_container h2{
+    padding: 25px 0px;
+    border-bottom: 5px solid var(--amazon-color);
+}
+
+.order_container{
+    padding: 40px 20px;
+}

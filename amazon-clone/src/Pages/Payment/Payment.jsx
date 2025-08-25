@@ -9,6 +9,7 @@ import { axiosInstance } from "../../API/axios";
 import { ClipLoader } from "react-spinners";
 import { db } from "../../Utility/firebase";
 import { useNavigate } from "react-router-dom";
+import { Type } from "../../Utility/action.type";
 
 function Payment() {
   const [{ user, basket }, dispatch] = useContext(DataContext);
@@ -50,18 +51,9 @@ function Payment() {
         url: `/payment/create?total=${SubtotalPrice * 100}`,
       });
 
-      console.log(response.data);
+      // console.log(response.data);
 
       const clientSecret = response.data.clientSecret;
-
-      // const cardElement = elements.getElement(CardElement);
-
-      // if (!cardElement) {
-      //   setError("Payment method not ready yet. Please try again.");
-      //   setIsProcessing(false);
-      //   return;
-      // }
-
       const { paymentIntent } = await stripe.confirmCardPayment(clientSecret, {
         payment_method: { card: elements.getElement(CardElement) },
       });
@@ -80,6 +72,11 @@ function Payment() {
           amount: SubtotalPrice,
           created: paymentIntent.created,
         });
+
+      dispatch({
+        type: Type.EMPTY_BASKET,
+      });
+
       setIsProcessing(false);
       navigate("/orders", { state: "You have placed a new order" });
     } catch (error) {

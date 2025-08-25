@@ -20,6 +20,8 @@
 .header_container {
   background-color: black;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   color: white;
   padding: 10px;
   width: 100%;

@@ -24,7 +24,7 @@ function SignUp() {
 
   const navigate = useNavigate();
   const navStateData = useLocation();
-  console.log(navStateData);
+  // console.log(navStateData);
 
   const authHandler = async (e) => {
     e.preventDefault();

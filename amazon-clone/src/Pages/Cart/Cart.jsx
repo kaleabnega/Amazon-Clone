@@ -18,7 +18,7 @@ function Cart() {
     return acc + curr.quantity;
   }, 0);
 
-  console.log(basket);
+  // console.log(basket);
 
   const increment = (item) => {
     dispatch({ type: Type.ADD_TO_BASKET, item: item });
