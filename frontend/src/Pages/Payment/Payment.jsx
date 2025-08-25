@@ -10,6 +10,7 @@ import { ClipLoader } from "react-spinners";
 import { db } from "../../Utility/firebase";
 import { useNavigate } from "react-router-dom";
 import { Type } from "../../Utility/action.type";
+import { useEffect } from "react";
 
 function Payment() {
   const [{ user, basket }, dispatch] = useContext(DataContext);
@@ -86,6 +87,10 @@ function Payment() {
       }
     }
   };
+
+    useEffect(() => {
+      console.log("Render backend URL:", import.meta.env.VITE_RENDER_URL);
+    }, []);
 
   // console.log(user)
 
